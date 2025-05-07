@@ -1,3 +1,9 @@
+try:
+    import sklearn
+    print("scikit-learn is available!")
+except ImportError:
+    print("scikit-learn is not installed!")
+
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -5,11 +11,6 @@ from sklearn.datasets import load_breast_cancer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 
-try:
-    import sklearn
-    print("scikit-learn is available!")
-except ImportError:
-    print("scikit-learn is not installed!")
     
 # Load dataset and train model
 data = load_breast_cancer()
