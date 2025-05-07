@@ -5,6 +5,12 @@ from sklearn.datasets import load_breast_cancer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 
+try:
+    import sklearn
+    print("scikit-learn is available!")
+except ImportError:
+    print("scikit-learn is not installed!")
+    
 # Load dataset and train model
 data = load_breast_cancer()
 X = pd.DataFrame(data.data, columns=data.feature_names)
